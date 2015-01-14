@@ -7,11 +7,11 @@ Yleisiä linkkejä:
 
 ## Työn aihe
 
-Reseptiarkistossa on reseptejä, ja niissä käytettävillä raaka-aineilla omat tietonsa. Lisäksi palvelussa on ostoslistatoiminto.
-* Resepteissä listataan raaka-aineet [vaihtoehtoineen (kun esimerkiksi kesäkurpitsan voi korvata munakoisolla)? Kuulostaa vaikealta toteuttaa, teen jos jää aikaa?], niiden määrät, vapaamuotoinen valmistusohje ja mahdollisuus kuvaan. 
-* Raaka-aineilla itsellään voi olla kuva, niiden paras ostopaikka, mahdollinen sesonkinsa vuoden aikana, mahdollisuus muihin huomioihin, ja linkit resepteihin joissa raaka-ainetta käytetään. 
-* Reseptejä voi hakea haluamallaan yhdistelmällä raaka-aineita. 
-* Rekisteröityneet käyttäjät voivat lisätä raaka-aineita omalle ostoslistalleen, ja poistaa niitä siltä tai tyhjentää listan kokonaan.
-* Rekisteröityneet käyttäjät voivat lisätä ja muokata lisäämiään reseptejä sekä lisätä raaka-aineita pelkän nimen osalta, mutta eivät muokata niiden tietoja.
-* Ylläpitäjät voivat lisätä, muokata ja poistaa kaikkia reseptejä sekä raaka-aineita.
-* Kaikki käyttäjät (ei tarvitse rekisteröityä) voivat selata ja hakea reseptejä ja raaka-aineita.
+Reseptiarkistossa on reseptejä, ja niissä käytettävillä raaka-aineilla omat tietonsa. 
+* Resepteissä listataan raaka-aineet [vaihtoehtoineen (kun esimerkiksi kesäkurpitsan voi korvata munakoisolla)? Kuulostaa vaikealta toteuttaa, teen jos jää aikaa?], niiden määrät, vapaamuotoinen valmistusohje, mahdollisuus kuvaan, ja reseptin lisännyt käyttäjä.
+* Raaka-aineilla itsellään voi olla kuva, mistä ne kannattaa ostaa, mahdollinen sesonkinsa vuoden aikana, mahdollisuus muihin huomioihin, ja linkit resepteihin joissa raaka-ainetta käytetään. 
+* Kaikki käyttäjät (ei tarvitse rekisteröityä) voivat selata reseptejä ja raaka-aineita sekä hakea reseptejä nimen, raaka-aineiden tai reseptin lisänneen käyttäjän perusteella.
+* Rekisteröityneet käyttäjät voivat tallentaa reseptejä suosikkilistalleen.
+* Rek. käyttäjät voivat lisätä ja muokata lisäämiään reseptejä sekä lisätä raaka-aineita pelkän nimen osalta, mutta eivät muokata niiden tietoja.
+* Ylläpitäjät voivat kaiken ylläolevan lisäksi lisätä, muokata ja poistaa kaikkia reseptejä sekä raaka-aineita.
+* Ehkä: Rekisteröityneet käyttäjät voivat lisätä raaka-aineita omalle ostoslistalleen, ja poistaa niitä siltä tai tyhjentää listan kokonaan. Listan voi järjestää raaka-aineiden suositeltujen ostopaikkojen mukaan.
