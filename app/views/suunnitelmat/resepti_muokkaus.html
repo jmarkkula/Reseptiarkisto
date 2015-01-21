@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Muokkaa reseptiä</h1>
+
+  <form>
+    <div class="form-group">
+      <label>Nimi</label>
+      <input class="form-control" value="Hummus" type="text">
+    </div>
+
+      
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Raaka-aine</th>
+        <th>Määrä</th>
+        <th>Määrän yksikkö</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Listataan pelit tähän -->
+      <tr>
+        <td><a href="#">The Elder Scrolls V: Skyrim</a></td>
+        <td>11.11.2011</td>
+        <td>Bethesda Softworks</td>
+        <td><label class="label label-danger">kesken</label></td>
+        <td>9.12.2014</td>
+        <th><a class="btn btn-default btn-sm" href="#">Muokkaa</a></th>
+      </tr>
+    </tbody>
+  </table>
+      
+    <div class="form-group">
+      <label>Kuvaus</label>
+      <textarea class="form-control">        The Elder Scrolls V: Skyrim on Bethesda Softworksin kehittämä ja vuonna 2011 Xbox 360:lle, PlayStation 3:lle ja Microsoft Windowsille julkaisema The Elder Scrolls -tietokoneroolipelisarjan videopeli. Skyrim on The Elder Scrolls -sarjan viides osa.
+      </textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Tallenna</button>
+    </div>
+  </form>
+{% endblock %}

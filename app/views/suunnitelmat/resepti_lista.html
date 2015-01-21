@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Reseptit</h1>
+
+  <p>
+    <a href="#" class="btn btn-success">Lisää resepti</a>
+  </p>
+
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Nimi</th>
+        <th>Lisääjä</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- Listataan reseptit tähän -->
+      <tr>
+        <td><a href="http://juma.users.cs.helsinki.fi/tsoha/reseptit/hummus">Hummus</a></td>
+        <td>julia</td>
+        <th><a class="btn btn-default btn-sm" href="#">Muokkaa</a></th>
+      </tr>
+            <tr>
+        <td><a href="#">Pasta carbonara</a></td>
+        <td>niku</td>
+        <th><a class="btn btn-default btn-sm" href="#">Muokkaa</a></th>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
