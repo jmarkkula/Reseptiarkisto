@@ -1,45 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Muokkaa reseptiä</h1>
+<h1>Muokkaa reseptiä</h1>
 
-  <form>
+<form>
     <div class="form-group">
-      <label>Nimi</label>
-      <input class="form-control" value="Hummus" type="text">
+        <label>Nimi</label>
+        <input class="form-control" value="Appelsiinimehu" type="text">
     </div>
+</form>
 
-      
-  <table class="table table-striped table-bordered">
+<br>
+<table class="table">
     <thead>
-      <tr>
-        <th>Raaka-aine</th>
-        <th>Määrä</th>
-        <th>Määrän yksikkö</th>
-        <th></th>
-      </tr>
+        <tr>
+            <th>Raaka-aine</th>
+            <th>Määrä</th>
+            <th></th>
+        </tr>
     </thead>
-
     <tbody>
-      <!-- Listataan pelit tähän -->
-      <tr>
-        <td><a href="#">The Elder Scrolls V: Skyrim</a></td>
-        <td>11.11.2011</td>
-        <td>Bethesda Softworks</td>
-        <td><label class="label label-danger">kesken</label></td>
-        <td>9.12.2014</td>
-        <th><a class="btn btn-default btn-sm" href="#">Muokkaa</a></th>
-      </tr>
+        <tr>
+            <td><a href="http://juma.users.cs.helsinki.fi/tsoha/raakaaine/appelsiini">Appelsiini</a></td>
+            <td>500 g</td>
+            <th><a class="btn btn-danger btn-xs" href="#">Poista</a></th>
+        </tr>
     </tbody>
-  </table>
-      
+</table>
+<form class="form-inline">
     <div class="form-group">
-      <label>Kuvaus</label>
-      <textarea class="form-control">        The Elder Scrolls V: Skyrim on Bethesda Softworksin kehittämä ja vuonna 2011 Xbox 360:lle, PlayStation 3:lle ja Microsoft Windowsille julkaisema The Elder Scrolls -tietokoneroolipelisarjan videopeli. Skyrim on The Elder Scrolls -sarjan viides osa.
-      </textarea>
+        <label class="sr-only" for="raakaaine2">Raaka-aine</label>
+        <input type="text" class="form-control" placeholder="Raaka-aine">
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Tallenna</button>
+        <label class="sr-only" for="maara2">Määrä</label>
+        <input type="text" class="form-control"  placeholder="Määrä">
     </div>
-  </form>
+
+    <button type="submit" class="btn btn-success">Lisää</button>
+</form>
+<br>
+<br>
+<form>
+    <div class="form-group">
+        <label>Valmistus</label>
+        <textarea class="form-control">Purista appelsiinit mehuksi esimerkiksi mehulingossa tai käsin.</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Tallenna</button>
+    </div>
+</form>
+
+
 {% endblock %}

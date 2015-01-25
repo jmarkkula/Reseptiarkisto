@@ -23,5 +23,21 @@ class HelloWorldController extends BaseController {
         public static function resepti_esittely(){
     self::render_view('suunnitelmat/resepti_esittely.html');
   }
+  
+          public static function resepti_muokkaus(){
+    self::render_view('suunnitelmat/resepti_muokkaus.html');
+  }
+  
+            public static function raakaaine_lista(){
+    self::render_view('suunnitelmat/raakaaine_lista.html');
+  }
+  
+          public static function raakaaine_esittely(){
+    self::render_view('suunnitelmat/raakaaine_esittely.html');
+  }
+  
+            public static function raakaaine_muokkaus(){
+    self::render_view('suunnitelmat/raakaaine_muokkaus.html');
+  }
 
 }

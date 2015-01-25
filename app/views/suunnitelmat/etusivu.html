@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> Tervetuloa! :)<h>
+<h1> Tervetuloa Reseptiarkistoon!</h1>
+<p> Täältä löydät herkullisia reseptejä.</p>
+<br>
+<br>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputName2">Hae reseptejä</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Reseptin nimi...">
+    
+  </div>
+    <button type="submit" class="btn btn-default">Hae</button>
+</form>
 {% endblock %}

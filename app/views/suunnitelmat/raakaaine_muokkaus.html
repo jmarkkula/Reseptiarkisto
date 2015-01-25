@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>Muokkaa raaka-ainetta</h1>
+
+<form>
+    <fieldset disabled>
+    <div class="form-group">
+        <label>Nimi</label>
+        <input class="form-control"  value="Appelsiini" type="text">
+    </div>
+    </fieldset>
+</form>
+
+<form>
+    <div class="form-group">
+        <label>Kuvaus</label>
+        <textarea class="form-control">Herkullinen sitrushedelmä.</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Tallenna</button>
+    </div>
+</form>
 
 {% endblock %}

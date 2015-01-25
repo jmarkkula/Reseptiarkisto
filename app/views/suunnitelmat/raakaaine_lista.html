@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>Raaka-aineet</h1>
 
+<p>
+    <a href="#" class="btn btn-success">Lisää raaka-aine</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Listataan raaka-aineet tähän -->
+        <tr>
+            <td><a href="http://juma.users.cs.helsinki.fi/tsoha/raakaaineet/appelsiini">Appelsiini</a></td>
+            <th><a class="btn btn-default btn-sm" href="http://juma.users.cs.helsinki.fi/tsoha/raakaaineet/appelsiini/muokkaa">Muokkaa</a></th>
+        </tr>
+
+    </tbody>
+</table>
 {% endblock %}
