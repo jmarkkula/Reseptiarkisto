@@ -11,8 +11,10 @@ $app->get('/hiekkalaatikko', function() {
 $app->get('/etusivu', function() {
     HelloWorldController::etusivu();
 });
+
+
 $app->get('/raakaaineet', function() {
-    HelloWorldController::raakaaine_lista();
+    RaakaaineController::index();
 });
 
 $app->get('/raakaaineet/appelsiini', function() {

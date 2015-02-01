@@ -9,7 +9,7 @@ class Raakaaine extends BaseModel {
 
     public $nimi, $kuvaus;
 
-    public function __construct($attributes = null) {
+    public function __construct($attributes) {
         parent::__construct($attributes);
     }
     

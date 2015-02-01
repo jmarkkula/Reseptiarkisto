@@ -19,8 +19,8 @@
         <!-- Listataan raaka-aineet tähän -->
         {% for game in games %}
         <tr>
-            <td><a href="http://juma.users.cs.helsinki.fi/tsoha/raakaaineet/appelsiini">Appelsiini</a></td>
-            <th><a class="btn btn-default btn-sm" href="http://juma.users.cs.helsinki.fi/tsoha/raakaaineet/appelsiini/muokkaa">Muokkaa</a></th>
+            <td><a href="{{base_path}}/raakaaine/{{raakaaine.nimi}}">{{raakaaine.nimi}}</a></td>
+            <th><a class="btn btn-default btn-sm" href="">Muokkaa</a></th>
         </tr>
         {% endfor %}
     </tbody>
