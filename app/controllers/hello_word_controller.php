@@ -1,5 +1,7 @@
 <?php
 
+require 'app/models/raakaaine.php';
+
 class HelloWorldController extends BaseController {
 
     public static function index() {
@@ -8,7 +10,9 @@ class HelloWorldController extends BaseController {
 
     public static function sandbox() {
         // Testaa koodiasi täällä	
-        self::render_view('helloworld.html');
+        $raakaaineet = Raakaaine::all();
+        
+        print_r($raakaaineet);
 
     }
     

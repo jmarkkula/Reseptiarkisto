@@ -7,8 +7,8 @@ INSERT INTO Kayttaja (nimimerkki, email) VALUES ('juli', 'juli@on.kans');
 INSERT INTO Resepti (nimi, valmistusohje, lisaaja) VALUES ('Pasta Carbonaran kastike', 'Paista pekoni ja valkosipuli, lisää kerma.', 'niku');
 
 -- Raakaaine-taulun testidata
-INSERT INTO Raakaaine (nimi) VALUES ('Pekoni');
-INSERT INTO Raakaaine (nimi) VALUES ('Kerma');
+INSERT INTO Raakaaine (nimi, kuvaus) VALUES ('Pekoni', 'Mmmm.');
+INSERT INTO Raakaaine (nimi, kuvaus) VALUES ('Kerma', 'Rasvainen maitotuote.');
 INSERT INTO Raakaaine (nimi) VALUES ('Valkosipuli');
 
 -- Ainesosa-taulun testidata
