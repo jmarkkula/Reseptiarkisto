@@ -39,7 +39,7 @@ class RaakaaineController extends BaseController {
         if (count($errors) == 0) {
             $nimi = Raakaaine::create($attributes);
 
-            self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-aine lisätty!', 'raakaaine' => $attributes));
+            self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-aine lisätty.', 'raakaaine' => $attributes));
         } else {
             self::render_view('/raakaaine/new.html', array('errors' => $errors, 'raakaaine' => $attributes));
         }
@@ -50,10 +50,17 @@ class RaakaaineController extends BaseController {
     public static function edit($nimi) {
         $raakaaine = Raakaaine::find($nimi);
         
-        self::render_view('/raakaaine/edit.html', array('attributes' => $raakaaine));
+        self::render_view('/raakaaine/edit.html', array('raakaaine' => $raakaaine));
     }
     
     public static function update($nimi) {
+        $params = $_POST;
+        
+        $raakaaine = array('nimi' => $nimi, 'kuvaus'=>$params['kuvaus']);
+        
+        Raakaaine::update($raakaaine);
+        
+        self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-ainetta muokattu.', 'raakaaine' => $raakaaine));
         
     }
     

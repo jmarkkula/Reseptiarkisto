@@ -73,5 +73,9 @@ class Raakaaine extends BaseModel {
     public static function destroy($nimi) {
         DB::query('DELETE FROM Raakaaine WHERE nimi = :nimi', array('nimi' => $nimi));
     }
+    
+    public static function update($attributes) {
+        DB::query('UPDATE Raakaaine SET kuvaus = :kuvaus WHERE nimi = :nimi', $attributes);
+    }
 
 }

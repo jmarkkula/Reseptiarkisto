@@ -34,9 +34,13 @@ $app->get('/raakaaine/:nimi', function($nimi) {
 
 
 
-//Raaka-aine muokkaus TODO
+//Raaka-aine muokkaus
 $app->get('/raakaaine/:nimi/muokkaa', function($nimi) {
     RaakaaineController::edit($nimi);
+});
+
+$app->post('/raakaaine/:nimi', function($nimi) {
+    RaakaaineController::update($nimi);
 });
 
 //Raaka-aineen poisto
