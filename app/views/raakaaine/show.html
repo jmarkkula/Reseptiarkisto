@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{raakaaine.nimi}}</h1>
+
+<div class="alert alert-success">
+  {{message}}
+</div>
+
+<!--Painikkeet tähän-->
+<p>
+    <button class="btn btn-danger">Poista</button> <a href="{{base_path}}/raakaaineet/{{raakaaine.nimi}}/muokkaa" class="btn btn-default">Muokkaa</a>
+  </p>
+  <!-- Kuvaus tulee tähän -->
+  <p>{{raakaaine.kuvaus}}
+  </p>
+
+{% endblock %}

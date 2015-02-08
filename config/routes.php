@@ -1,11 +1,9 @@
 <?php
 
+//Etusivu
+
 $app->get('/', function() {
     HelloWorldController::etusivu();
-});
-
-$app->get('/hiekkalaatikko', function() {
-    HelloWorldController::sandbox();
 });
 
 $app->get('/etusivu', function() {
@@ -13,17 +11,36 @@ $app->get('/etusivu', function() {
 });
 
 
+//Raaka-aineen lisäys 
+$app->post('/raakaaineet', function() {
+    RaakaaineController::store();
+});
+
+$app->get('/raakaaineet/uusi', function() {
+    RaakaaineController::create();
+});
+
+
+//Raaka-aine listaus
 $app->get('/raakaaineet', function() {
     RaakaaineController::index();
 });
 
-$app->get('/raakaaineet/appelsiini', function() {
-    HelloWorldController::raakaaine_esittely();
+
+//Raaka-aine esittelysivu
+$app->get('/raakaaineet/:nimi', function($nimi) {
+    RaakaaineController::show($nimi);
 });
 
+
+
+//Raaka-aine muokkaus TODO
 $app->get('/raakaaineet/appelsiini/muokkaa', function() {
     HelloWorldController::raakaaine_muokkaus();
 });
+
+
+//Resepti
 
 $app->get('/reseptit', function() {
     HelloWorldController::resepti_lista();
@@ -38,3 +55,9 @@ $app->get('/reseptit/appelsiinimehu/muokkaa', function() {
 });
 
 
+
+//Hiekkalaatikko
+
+$app->get('/hiekkalaatikko', function() {
+    HelloWorldController::sandbox();
+});

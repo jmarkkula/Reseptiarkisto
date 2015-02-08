@@ -43,7 +43,7 @@
       exit();
     }
 
-    public static function redirect_to($location, $message = null){
+    public static function redirect_to($location, $message){
       if(!is_null($message)){
         $_SESSION['flash_message'] = json_encode($message);
       }
