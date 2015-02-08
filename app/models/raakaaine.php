@@ -32,6 +32,11 @@ class Raakaaine extends BaseModel {
             $errors[] = 'Nimen pituuden tulee olla vähintään kaksi merkkiä.';
         }
         
+        if (strlen($this->nimi) > 20) {
+            $errors[] = 'Nimen pituus saa olla korkeintaan 20 merkkiä';
+        }
+        
+        
         return $errors;
     }
 
