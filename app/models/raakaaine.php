@@ -11,14 +11,14 @@ class Raakaaine extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        
+
         $this->validators = array('validate_nimi');
     }
 
     public static function create($attributes) {
-        $palautus = DB::query('INSERT INTO Raakaaine (nimi, kuvaus) VALUES (:nimi, :kuvaus) RETURNING nimi', $attributes);
+        DB::query('INSERT INTO Raakaaine (nimi, kuvaus) VALUES (:nimi, :kuvaus) RETURNING nimi', $attributes);
 
-        return $palautus;
+        return $attributes['nimi'];
     }
 
     public function validate_nimi() {
@@ -26,17 +26,15 @@ class Raakaaine extends BaseModel {
 
         if ($this->nimi == '' || $this->nimi == null) {
             $errors[] = 'Nimi ei saa olla tyhjä.';
-        }
-
-        if (strlen($this->nimi) < 2) {
+        } else if (strlen($this->nimi) < 2) {
             $errors[] = 'Nimen pituuden tulee olla vähintään kaksi merkkiä.';
         }
-        
+
         if (strlen($this->nimi) > 20) {
             $errors[] = 'Nimen pituus saa olla korkeintaan 20 merkkiä';
         }
-        
-        
+
+
         return $errors;
     }
 
@@ -70,6 +68,10 @@ class Raakaaine extends BaseModel {
         }
 
         return null;
+    }
+
+    public static function destroy($nimi) {
+        DB::query('DELETE FROM Raakaaine WHERE nimi = :nimi', array('nimi' => $nimi));
     }
 
 }

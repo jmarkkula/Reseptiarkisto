@@ -12,45 +12,51 @@ $app->get('/etusivu', function() {
 
 
 //Raaka-aineen lisäys 
-$app->post('/raakaaineet', function() {
+$app->post('/raakaaine', function() {
     RaakaaineController::store();
 });
 
-$app->get('/raakaaineet/uusi', function() {
+$app->get('/raakaaine/uusi', function() {
     RaakaaineController::create();
 });
 
 
 //Raaka-aine listaus
-$app->get('/raakaaineet', function() {
+$app->get('/raakaaine', function() {
     RaakaaineController::index();
 });
 
 
 //Raaka-aine esittelysivu
-$app->get('/raakaaineet/:nimi', function($nimi) {
+$app->get('/raakaaine/:nimi', function($nimi) {
     RaakaaineController::show($nimi);
 });
 
 
 
 //Raaka-aine muokkaus TODO
-$app->get('/raakaaineet/appelsiini/muokkaa', function() {
+$app->get('/raakaaine/appelsiini/muokkaa', function() {
     HelloWorldController::raakaaine_muokkaus();
+});
+
+//Raaka-aineen poisto
+$app->post('/raakaaine/:nimi/poista', function($nimi){
+ 
+  RaakaaineController::destroy($nimi);
 });
 
 
 //Resepti
 
-$app->get('/reseptit', function() {
+$app->get('/resepti', function() {
     HelloWorldController::resepti_lista();
 });
 
-$app->get('/reseptit/appelsiinimehu', function() {
+$app->get('/resepti/appelsiinimehu', function() {
     HelloWorldController::resepti_esittely();
 });
 
-$app->get('/reseptit/appelsiinimehu/muokkaa', function() {
+$app->get('/resepti/appelsiinimehu/muokkaa', function() {
     HelloWorldController::resepti_muokkaus();
 });
 
