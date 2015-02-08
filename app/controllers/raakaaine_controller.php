@@ -41,7 +41,7 @@ class RaakaaineController extends BaseController {
 
             self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-aine lisätty!', 'raakaaine' => $attributes));
         } else {
-            self::render_view('/raakaaine/new.html', array('errors' => $errors), array('attributes' => $attributes));
+            self::render_view('/raakaaine/new.html', array('errors' => $errors, 'raakaaine' => $attributes));
         }
     }
     

@@ -35,8 +35,8 @@ $app->get('/raakaaine/:nimi', function($nimi) {
 
 
 //Raaka-aine muokkaus TODO
-$app->get('/raakaaine/appelsiini/muokkaa', function() {
-    HelloWorldController::raakaaine_muokkaus();
+$app->get('/raakaaine/:nimi/muokkaa', function($nimi) {
+    RaakaaineController::edit($nimi);
 });
 
 //Raaka-aineen poisto
