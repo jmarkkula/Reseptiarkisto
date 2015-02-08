@@ -10,17 +10,16 @@
 {% endif %}
 
 <!--Painikkeet tähän-->
-<p>
 
 <form method="post" action="{{base_path}}/raakaaine/{{raakaaine.nimi}}/poista">
-    <button type="submit" class="btn btn-danger">Poista</button>
+    <button type="submit" style="float:left; margin-right: 1em" class="btn btn-danger">Poista</button>
 </form>
-
 
 <a href="{{base_path}}/raakaaine/{{raakaaine.nimi}}/muokkaa" class="btn btn-default">Muokkaa</a>
 
 <!-- Kuvaus tulee tähän -->
-<p>{{raakaaine.kuvaus}}
-</p>
+<div id="kuvaus">
+<p>{{raakaaine.kuvaus}}</p>
+</div>
 
 {% endblock %}
