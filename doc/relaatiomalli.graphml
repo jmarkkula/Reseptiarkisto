@@ -16,10 +16,9 @@
     <data key="d0"/>
     <node id="n0">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="168.125" x="-10.0" y="45.0"/>
+          <y:Geometry height="90.0" width="168.125" x="512.3438492063492" y="0.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="49.01171875" x="59.556640625" y="4.0">Resepti</y:NodeLabel>
@@ -40,10 +39,9 @@ valmistusohje: String
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="217.5" x="478.4375" y="15.0"/>
+          <y:Geometry height="90.0" width="217.5" x="50.0" y="200.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="57.73046875" x="79.884765625" y="4.0">Ainesosa
@@ -64,10 +62,9 @@ valmistusohje: String
       </data>
     </node>
     <node id="n2">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="71.25" width="217.5" x="-271.5625" y="24.375"/>
+          <y:Geometry height="71.25" width="217.5" x="347.5" y="209.375"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="61.890625" x="77.8046875" y="4.0">Kategoria</y:NodeLabel>
@@ -86,13 +83,12 @@ valmistusohje: String
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="155.0000000000001" x="897.2916666666667" y="15.0"/>
+          <y:Geometry height="90.0" width="155.0000000000001" x="81.24999999999994" y="385.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="67.0234375" x="43.98828125" y="4.0">Raakaaine</y:NodeLabel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="67.0234375" x="43.98828125000006" y="4.0">Raakaaine</y:NodeLabel>
           <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="31.9375" modelName="custom" textColor="#000000" visible="true" width="139.099609375" x="2.0" y="29.96875">&lt;&lt;key&gt;&gt; nimi: String
 kuvaus: String<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
@@ -108,10 +104,9 @@ kuvaus: String<y:LabelModel>
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="183.125" x="-31.5625" y="225.0"/>
+          <y:Geometry height="90.0" width="183.125" x="645.0001984126984" y="200.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="53.775390625" x="64.6748046875" y="4.0">Kayttaja</y:NodeLabel>
@@ -131,10 +126,9 @@ email: varchar(320)<y:LabelModel>
     </node>
     <node id="n5">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="90.0" width="208.125" x="478.4375" y="213.33333333333337"/>
+          <y:Geometry height="90.0" width="208.125" x="722.0315476190476" y="385.0"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="17.96875" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="94.990234375" x="56.5673828125" y="4.0">Suosikkiresepti</y:NodeLabel>
@@ -154,10 +148,12 @@ email: varchar(320)<y:LabelModel>
     </node>
     <edge id="e0" source="n0" target="n1">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="84.07822402717719" sy="-11.15751027062241" tx="-108.76368530040197" ty="19.315601453793107"/>
+          <y:Path sx="-63.046875" sy="45.0" tx="0.0" ty="-45.0">
+            <y:Point x="533.3594742063492" y="105.0"/>
+            <y:Point x="158.75" y="105.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="plain" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -166,10 +162,12 @@ email: varchar(320)<y:LabelModel>
     </edge>
     <edge id="e1" source="n0" target="n2">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-62.54650297619059" sy="-12.083333333333371" tx="77.20136518771322" ty="16.87499999999997"/>
+          <y:Path sx="-21.015625" sy="45.0" tx="0.0" ty="-35.625">
+            <y:Point x="575.3907242063492" y="120.0"/>
+            <y:Point x="456.25" y="120.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="plain" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -178,11 +176,11 @@ email: varchar(320)<y:LabelModel>
     </edge>
     <edge id="e2" source="n0" target="n4">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-84.05821464485899" sy="33.7764569924677" tx="-91.57605768999406" ty="-12.608161534698581">
-            <y:Point x="-120.0" y="257.3918384653014"/>
+          <y:Path sx="21.015625" sy="45.0" tx="0.0" ty="-45.0">
+            <y:Point x="617.4219742063492" y="120.0"/>
+            <y:Point x="736.5626984126984" y="120.0"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
@@ -192,10 +190,9 @@ email: varchar(320)<y:LabelModel>
     </edge>
     <edge id="e3" source="n1" target="n3">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="70.80078124999993" sy="-6.1391444175851575" tx="-77.44952768277241" ty="-6.1391444175851575"/>
+          <y:Path sx="0.0" sy="45.0" tx="0.0" ty="-45.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>
@@ -204,10 +201,12 @@ email: varchar(320)<y:LabelModel>
     </edge>
     <edge id="e4" source="n4" target="n5">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="91.59469604492188" sy="0.0" tx="-91.86860068259391" ty="11.666666666666629"/>
+          <y:Path sx="0.0" sy="45.0" tx="-52.03125" ty="-45.0">
+            <y:Point x="736.5626984126984" y="305.0"/>
+            <y:Point x="774.0627976190476" y="305.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="plain" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -216,10 +215,12 @@ email: varchar(320)<y:LabelModel>
     </edge>
     <edge id="e5" source="n5" target="n0">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-65.20833333333337" sy="13.333333333333258" tx="84.0259348677609" ty="-8.427819787892474"/>
+          <y:Path sx="52.03125" sy="-45.0" tx="63.046875" ty="45.0">
+            <y:Point x="878.1253968253968" y="105.0"/>
+            <y:Point x="659.4532242063492" y="105.0"/>
+          </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>

@@ -44,13 +44,21 @@ $app->post('/raakaaine/:nimi', function($nimi) {
 });
 
 //Raaka-aineen poisto
-$app->post('/raakaaine/:nimi/poista', function($nimi){
- 
-  RaakaaineController::destroy($nimi);
+$app->post('/raakaaine/:nimi/poista', function($nimi) {
+    RaakaaineController::destroy($nimi);
 });
 
 
-//Resepti
+//Kirjautuminen
+$app->get('/login', function() {
+    UserController::login();
+});
+
+$app->post('/login', function() {
+    UserController::handle_login();
+});
+
+//Resepti TODO
 
 $app->get('/resepti', function() {
     HelloWorldController::resepti_lista();
