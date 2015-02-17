@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Reseptit</h1>
+
+{%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+<p>
+    <a href="{{base_path}}/resepti/uusi" class="btn btn-success">Lisää uusi</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Lisääjä</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Listataan reseptit tähän -->
+        {% for resepti in reseptit %}
+        <tr>
+            <td><a href="{{base_path}}/resepti/{{resepti.tunnus}}">{{resepti.nimi}}</a></td>
+            <td>{{resepti.lisaaja}}</td>
+            <th><a class="btn btn-default btn-sm" href="{{base_path}}/resepti/{{resepti.tunnus}}/muokkaa">Muokkaa</a></th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

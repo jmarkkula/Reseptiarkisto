@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{resepti.nimi}}</h1>
+
+{% if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+<!-- Painikkeet tähän -->
+
+<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/poista">
+    <button type="submit" style="float:left; margin-right: 1em" class="btn btn-danger">Poista</button>
+</form>
+
+<a href="{{base_path}}/resepti/{{resepti.tunnus}}/muokkaa" class="btn btn-default">Muokkaa</a>
+
+<!-- Ainekset tulee listana tähän -->
+<br>
+<br>
+
+<ul>
+    {% for ainesosa in resepti.ainesosat %}
+
+    <li><strong>{{ainesosa.maara}}</strong> <a href="{{base_path}}/raakaaine/{{ainesosa.raakaaine}}">{{ainesosa.raakaaine}}</a></li>
+
+    {% endfor %}
+</ul>
+
+<!-- Valmistusohje tulee tähän -->
+<p>
+    {{resepti.valmistusohje}}
+</p>
+{% endblock %}

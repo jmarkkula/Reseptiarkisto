@@ -8,7 +8,7 @@ class RaakaaineController extends BaseController {
 
         $raakaaineet = Raakaaine::all();
 
-        self::render_view('raakaaine/index.html', array('raakaaineet' => $raakaaineet));
+        self::render_view('raakaaine/listaus.html', array('raakaaineet' => $raakaaineet));
     }
 
     //Esittely
@@ -16,13 +16,13 @@ class RaakaaineController extends BaseController {
     public static function show($nimi) {
         $raakaaine = Raakaaine::find($nimi);
 
-        self::render_view('raakaaine/show.html', array('raakaaine' => $raakaaine));
+        self::render_view('raakaaine/esittely.html', array('raakaaine' => $raakaaine));
     }
 
     //Lisäys
     
     public static function create() {
-        self::render_view('raakaaine/new.html');
+        self::render_view('raakaaine/uusi.html');
     }
 
     public static function store() {
@@ -41,7 +41,7 @@ class RaakaaineController extends BaseController {
 
             self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-aine lisätty.', 'raakaaine' => $attributes));
         } else {
-            self::render_view('/raakaaine/new.html', array('errors' => $errors, 'raakaaine' => $attributes));
+            self::render_view('/raakaaine/uusi.html', array('errors' => $errors, 'raakaaine' => $attributes));
         }
     }
     
@@ -50,7 +50,7 @@ class RaakaaineController extends BaseController {
     public static function edit($nimi) {
         $raakaaine = Raakaaine::find($nimi);
         
-        self::render_view('/raakaaine/edit.html', array('raakaaine' => $raakaaine));
+        self::render_view('/raakaaine/muokkaus.html', array('raakaaine' => $raakaaine));
     }
     
     public static function update($nimi) {

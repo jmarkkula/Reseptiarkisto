@@ -33,7 +33,6 @@ $app->get('/raakaaine/:nimi', function($nimi) {
 });
 
 
-
 //Raaka-aine muokkaus
 $app->get('/raakaaine/:nimi/muokkaa', function($nimi) {
     RaakaaineController::edit($nimi);
@@ -49,7 +48,7 @@ $app->post('/raakaaine/:nimi/poista', function($nimi) {
 });
 
 
-//Kirjautuminen
+//Kirjautuminen (todo)
 $app->get('/login', function() {
     UserController::login();
 });
@@ -58,19 +57,33 @@ $app->post('/login', function() {
     UserController::handle_login();
 });
 
-//Resepti TODO
-
+//Reseptien listaus
 $app->get('/resepti', function() {
-    HelloWorldController::resepti_lista();
+    ReseptiController::index();
 });
 
-$app->get('/resepti/appelsiinimehu', function() {
-    HelloWorldController::resepti_esittely();
+//Reseptin esittely 
+$app->get('/resepti/:tunnus', function($tunnus) {
+    ReseptiController::show($tunnus);
 });
 
-$app->get('/resepti/appelsiinimehu/muokkaa', function() {
-    HelloWorldController::resepti_muokkaus();
+//Reseptin muokkaus
+$app->get('/resepti/:tunnus/muokkaa', function($tunnus) {
+    ReseptiController::edit($tunnus);
 });
+
+
+
+$app->post('/resepti/:tunnus', function($tunnus) {
+    ReseptiController::update($tunnus);
+});
+
+//Ainesosien poisto
+$app->post('/resepti/:reseptitunnus/poistaaines', function($ainesosa) {
+    AinesosaController::poista($ainesosa);
+});
+
+
 
 
 
