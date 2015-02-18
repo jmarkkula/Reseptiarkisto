@@ -22,4 +22,15 @@
 <p>{{raakaaine.kuvaus}}</p>
 </div>
 
+<!--
+{% if reseptit %}
+<h4>Käytetään resepteissä:</h4>
+
+<ul>
+    {% for resepti in reseptit %}
+    <li><strong>{{resepti.nimi}}</strong> <a href="{{base_path}}/resepti/{{resepti.nimi}}">{{resepti.nimi}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}-->
+
 {% endblock %}

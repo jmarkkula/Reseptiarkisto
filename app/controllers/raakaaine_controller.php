@@ -3,7 +3,7 @@
 class RaakaaineController extends BaseController {
 
     //Listaus
-    
+
     public static function index() {
 
         $raakaaineet = Raakaaine::all();
@@ -12,7 +12,7 @@ class RaakaaineController extends BaseController {
     }
 
     //Esittely
-    
+
     public static function show($nimi) {
         $raakaaine = Raakaaine::find($nimi);
 
@@ -20,7 +20,7 @@ class RaakaaineController extends BaseController {
     }
 
     //Lisäys
-    
+
     public static function create() {
         self::render_view('raakaaine/uusi.html');
     }
@@ -29,8 +29,8 @@ class RaakaaineController extends BaseController {
         $params = $_POST;
 
         $attributes = array(
-                    'nimi' => $params['nimi'],
-                    'kuvaus' => $params['kuvaus']
+            'nimi' => $params['nimi'],
+            'kuvaus' => $params['kuvaus']
         );
 
         $raakaaine = new Raakaaine($attributes);
@@ -44,31 +44,30 @@ class RaakaaineController extends BaseController {
             self::render_view('/raakaaine/uusi.html', array('errors' => $errors, 'raakaaine' => $attributes));
         }
     }
-    
+
     //Muokkaaminen
-    
+
     public static function edit($nimi) {
         $raakaaine = Raakaaine::find($nimi);
-        
+
         self::render_view('/raakaaine/muokkaus.html', array('raakaaine' => $raakaaine));
     }
-    
+
     public static function update($nimi) {
         $params = $_POST;
-        
-        $raakaaine = array('nimi' => $nimi, 'kuvaus'=>$params['kuvaus']);
-        
+
+        $raakaaine = array('nimi' => $nimi, 'kuvaus' => $params['kuvaus']);
+
         Raakaaine::update($raakaaine);
-        
+
         self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-ainetta muokattu.', 'raakaaine' => $raakaaine));
-        
     }
-    
+
     //Poistaminen 
-    
+
     public static function destroy($nimi) {
         Raakaaine::destroy($nimi);
-        
+
         self::redirect_to('/raakaaine', array('message' => 'Raaka-aine poistettu onnistuneesti!'));
     }
 

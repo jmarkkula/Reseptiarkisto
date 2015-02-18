@@ -27,13 +27,11 @@ class Ainesosa extends BaseModel {
     }
 
     public static function destroy($attributes) {
-        DB::query('DELETE FROM Ainesosa WWHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus LIMIT 1', 
-                array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
+        DB::query('DELETE FROM Ainesosa WWHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus LIMIT 1', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
     }
 
     public static function create($attributes) {
-        DB::query('INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES (:raakaaine, :maara, :reseptitunnus)', 
-                array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
+        DB::query('INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES (:raakaaine, :maara, :reseptitunnus)', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
     }
 
     public static function reseptin_ainesosat($reseptitunnus) {
@@ -50,6 +48,26 @@ class Ainesosa extends BaseModel {
         }
 
         return $ainesosat;
+    }
+
+    public static function ainesosat_joissa_raakaainetta($raakaaine) {
+        $ainesosat = array();
+
+        $rows = DB::query('SELECT * FROM Ainesosa WHERE raakaaine = :raakaaine', array('raakaaine' => $raakaaine));
+
+        if (count($rows) > 0) {
+            foreach ($rows as $row) {
+                $ainesosat[] = new Ainesosa(array(
+                    'raakaaine' => $row['raakaaine'],
+                    'maara' => $row['maara'],
+                    'reseptitunnus' => $row['reseptitunnus']
+                ));
+            }
+
+            return $ainesosat;
+        }
+
+        return null;
     }
 
 }

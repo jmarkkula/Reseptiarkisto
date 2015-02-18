@@ -17,7 +17,7 @@ class HelloWorldController extends BaseController {
     }
     
       public static function etusivu(){
-    self::render_view('suunnitelmat/etusivu.html');
+    self::render_view('home.html');
   }
   
        public static function resepti_lista(){
