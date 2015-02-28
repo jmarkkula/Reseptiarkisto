@@ -22,6 +22,6 @@ class KayttajaController extends BaseController{
   public static function logout() {
     $_SESSION['nimimerkki'] = null;
     
-    self::redirect_to('/login', array('message' => 'Hyvää päivän jatkoa!'));
+    self::redirect_to('/', array('message' => 'Hyvää päivän jatkoa!'));
   }
 }

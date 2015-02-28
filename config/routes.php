@@ -59,7 +59,7 @@ $app->post('/login', function() {
 
 //Kirjautuminen ulos
 $app->get('/logout', function() {
-    UserController::logout();
+    KayttajaController::logout();
 });
 
 //Reseptin luominen
