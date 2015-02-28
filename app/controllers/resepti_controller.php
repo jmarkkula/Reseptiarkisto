@@ -29,7 +29,8 @@ class ReseptiController extends BaseController {
         $params = $_POST;
 
         $attributes = array(
-                    'nimi' => $params['nimi']
+                    'nimi' => $params['nimi'],
+                'lisaaja' => $params['kayttaja']
         );
 
         $resepti = new Resepti($attributes);
