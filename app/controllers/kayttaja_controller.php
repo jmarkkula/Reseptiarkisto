@@ -12,10 +12,10 @@ class KayttajaController extends BaseController{
 
     if(!$kayttaja){
       self::redirect_to('/login', array('error' => 'Väärä käyttäjätunnus tai salasana.'));
-    }else{
+    } else{
       $_SESSION['nimimerkki'] = $kayttaja->nimimerkki;
 
-      self::redirect_to('/', array('message' => 'Tervetuloa takaisin' . $kayttaja->nimimerkki . '.'));
+      self::redirect_to('/', array('message' => 'Tervetuloa takaisin ' . $kayttaja->nimimerkki . '.'));
     }
   }
 }
