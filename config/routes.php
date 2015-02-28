@@ -10,6 +10,10 @@ $app->get('/etusivu', function() {
     HelloWorldController::etusivu();
 });
 
+//Kirjautuminen ulos
+$app->get('/logout', function() {
+    KayttajaController::logout();
+});
 
 //Raaka-aineen lisäys 
 $app->post('/raakaaine', function() {
@@ -55,11 +59,6 @@ $app->get('/login', function() {
 
 $app->post('/login', function() {
     KayttajaController::handle_login();
-});
-
-//Kirjautuminen ulos
-$app->get('/logout', function() {
-    KayttajaController::logout();
 });
 
 //Reseptin luominen
