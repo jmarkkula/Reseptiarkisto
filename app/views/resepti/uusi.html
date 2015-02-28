@@ -8,6 +8,9 @@
         <input name="nimi" class="form-control" value="{{resepti.nimi}}" type="text">
     </div>
     <div class="form-group">
+        <input name="kayttaja" type="hidden" class="form-control" value="{{user_logged_in.nimimerkki}}" type="text">
+    </div>
+    <div class="form-group">
         <button type="submit" class="btn btn-primary">Lisää</button>
     </div>
 </form>

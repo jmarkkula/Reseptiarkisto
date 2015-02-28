@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Description of raakaaine
- *
- * @author juma
- */
 class Raakaaine extends BaseModel {
 
     public $nimi, $kuvaus;
