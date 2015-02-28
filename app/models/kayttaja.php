@@ -1,7 +1,7 @@
 <?php
 
 class Kayttaja extends BaseModel {
-    public $nimi, $email, $salasana;
+    public $nimimerkki, $email, $salasana;
     
     public function __construct($attributes) {
         parent::__construct($attributes);
