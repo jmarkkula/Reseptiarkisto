@@ -28,7 +28,9 @@
         {% for raakaaine in raakaaineet %}
         <tr>
             <td><a href="{{base_path}}/raakaaine/{{raakaaine.nimi}}">{{raakaaine.nimi}}</a></td>
+            {% if user_logged_in %}
             <th><a class="btn btn-default btn-sm" href="{{base_path}}/raakaaine/{{raakaaine.nimi}}/muokkaa">Muokkaa</a></th>
+            {% endif %}
         </tr>
         {% endfor %}
     </tbody>

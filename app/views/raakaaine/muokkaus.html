@@ -2,6 +2,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% if user_logged_in %}
 <h1>Muokkaa raaka-ainetta</h1>
 
   
@@ -23,4 +25,7 @@
         <button type="submit" class="btn btn-primary">Muokkaa</button>
     </div>
 </form>
+{% else %}
+Muokataksesi raaka-ainetta kirjaudu sisään.
+{% endif %}
 {% endblock %}
