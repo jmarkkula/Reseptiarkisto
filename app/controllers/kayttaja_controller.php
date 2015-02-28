@@ -18,4 +18,10 @@ class KayttajaController extends BaseController{
       self::redirect_to('/', array('message' => 'Tervetuloa takaisin ' . $kayttaja->nimimerkki . '.'));
     }
   }
+  
+  public static function logout() {
+    $_SESSION['user'] = null;
+    
+    self::redirect_to('/login', array('message' => 'Hyvää päivän jatkoa!'));
+  }
 }

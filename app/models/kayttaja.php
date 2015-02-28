@@ -32,7 +32,7 @@ class Kayttaja extends BaseModel {
     }
 
     public static function find($nimimerkki) {
-        $rows = DB::query('SELECT nimimerkki, email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
+        $rows = DB::query('SELECT * FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
 
         if (count($rows) > 0) {
             $row = $rows[0];

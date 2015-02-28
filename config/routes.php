@@ -57,6 +57,11 @@ $app->post('/login', function() {
     KayttajaController::handle_login();
 });
 
+//Kirjautuminen ulos
+$app->get('/logout', function() {
+    UserController::logout();
+});
+
 //Reseptin luominen
 $app->post('/resepti', function() {
     ReseptiController::store();
