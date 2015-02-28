@@ -11,7 +11,7 @@ $app->get('/etusivu', function() {
 });
 
 //Kirjautuminen ulos
-$app->get('/logout', function() {
+$app->post('/logout', function() {
     KayttajaController::logout();
 });
 
