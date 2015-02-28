@@ -61,6 +61,10 @@ $app->post('/login', function() {
     KayttajaController::handle_login();
 });
 
+$app->get('/rekisteroidy', function() {
+    KayttajaController::register();
+}
+
 //Reseptin luominen
 $app->post('/resepti', function() {
     ReseptiController::store();

@@ -47,4 +47,30 @@ class Kayttaja extends BaseModel {
         return null;
     }
 
+    public static function register() {
+        $params = $_POST;
+
+        $attributes = array(
+            'nimimerkki' => $params['nimimerkki'],
+            'salasana' => $params['salasana'],
+            'email' => $params['email']
+        );
+
+        $raakaaine = new Kayttaja($attributes);
+        $errors = $raakaaine->errors();
+
+        if (count($errors) == 0) {
+            $nimi = Kayttaja::registertosql($attributes);
+
+            self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
+        } else {
+            self::render_view('/login', array('errors' => $errors));
+        }
+    }
+    
+    public static function registersql($attributes) {
+        DB::query('INSERT INTO Kayttaja (nimimerkki, email, salasana) VALUES (:nimimerkki, :email, :salasana) RETURNING nimimerkki', $attributes);
+
+        return $attributes['nimimerkki'];
+    }
 }
