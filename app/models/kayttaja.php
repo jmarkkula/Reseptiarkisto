@@ -8,8 +8,11 @@ class Kayttaja extends BaseModel {
     }
 
     public static function authenticate($nimimerkki, $salasana) {
-        $row = DB::query('SELECT email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
-        
+        //$row = DB::query('SELECT email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
+        $row = array(
+            "salasana" => "rahkapulla",
+            "email" => "testi@hotmail.com"
+        );
         if ($row['salasana'] == $salasana) {
             $kayttaja = new Kayttaja(array(
                 'nimimerkki' => $nimimerkki,
