@@ -1,6 +1,7 @@
 CREATE TABLE Kayttaja(
 nimimerkki varchar(20) PRIMARY KEY,
-email varchar(320)
+email varchar(320),
+salasana varchar(20)
 );
 
 CREATE TABLE Resepti(
