@@ -17,7 +17,7 @@ class Kayttaja extends BaseModel {
 
         if (count($rows) > 0) {
             $row = $rows[0];
-            
+
             if ($salasana == $row['salasana']) {
                 $kayttaja = new Kayttaja(array(
                     'nimimerkki' => $row['nimimerkki'],
@@ -27,6 +27,22 @@ class Kayttaja extends BaseModel {
 
                 return $kayttaja;
             }
+        }
+        return null;
+    }
+
+    public static function find($nimimerkki) {
+        $rows = DB::query('SELECT nimimerkki, email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
+
+        if (count($rows) > 0) {
+            $row = $rows[0];
+            $kayttaja = new Kayttaja(array(
+                'nimimerkki' => $row['nimimerkki'],
+                'email' => $row['email'],
+                'salasana' => $row['salasana']
+            ));
+
+            return $kayttaja;
         }
         return null;
     }
