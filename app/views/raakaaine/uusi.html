@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-{% if user_logged_in %}
-
 <h1>Lisää uusi raaka-aine</h1>
 
   {% if errors %}
@@ -31,9 +28,4 @@
         <button type="submit" class="btn btn-primary">Lisää</button>
     </div>
 </form>
-
-{% else %}
-<h3>Lisätäksesi uuden raaka-aineen sinun tulee olla kirjautunut sisään.</h3>
-{% endif %}  
-  
-  {% endblock %}
+{% endblock %}
