@@ -1,7 +1,7 @@
 
 -- Kayttaja-taulun testidata
-INSERT INTO Kayttaja (nimimerkki, email) VALUES ('niku', 'niku@on.best');
-INSERT INTO Kayttaja (nimimerkki, email) VALUES ('juli', 'juli@on.kans');
+INSERT INTO Kayttaja (nimimerkki, email, salasana) VALUES ('niku', 'niku@on.best', 'marsu');
+INSERT INTO Kayttaja (nimimerkki, email, salasana) VALUES ('juli', 'juli@on.kans', 'marus');
 
 -- Resepti-taulun testidata
 INSERT INTO Resepti (nimi, valmistusohje, lisaaja) VALUES ('Pasta Carbonaran kastike', 'Paista pekoni ja valkosipuli, lisää kerma.', 'niku');

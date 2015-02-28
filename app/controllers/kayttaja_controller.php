@@ -8,14 +8,14 @@ class KayttajaController extends BaseController{
   public static function handle_login(){
     $params = $_POST;
 
-    $user = Kayttaja::authenticate($params['kayttajatunnus'], $params['salasana']);
+    $kayttaja = Kayttaja::authenticate($params['nimimerkki'], $params['salasana']);
 
-    if(!$user){
+    if(!$kayttaja){
       self::redirect_to('/login', array('error' => 'Väärä käyttäjätunnus tai salasana.'));
     }else{
-      $_SESSION['kayttaja'] = $kayttaja->id;
+      $_SESSION['nimimerkki'] = $kayttaja->nimimerkki;
 
-      self::redirect_to('/', array('message' => 'Tervetuloa takaisin' . $user->name . '.'));
+      self::redirect_to('/', array('message' => 'Tervetuloa takaisin' . $kayttaja->nimimerkki . '.'));
     }
   }
 }
