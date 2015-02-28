@@ -23,5 +23,6 @@ class KayttajaController extends BaseController{
     $_SESSION['nimimerkki'] = null;
     
     self::redirect_to('/', array('message' => 'Hyvää päivän jatkoa!'));
+    exit();
   }
 }
