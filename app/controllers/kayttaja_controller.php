@@ -20,9 +20,9 @@ class KayttajaController extends BaseController{
   }
   
   public static function logout() {
-    $_SESSION['nimimerkki'] = null;
+    session_start();
+    unset($_SESSION["nimimerkki"]);
     
     self::redirect_to('/', array('message' => 'Hyvää päivän jatkoa!'));
-    exit();
   }
 }
