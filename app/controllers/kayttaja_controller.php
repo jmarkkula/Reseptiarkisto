@@ -24,4 +24,26 @@ class KayttajaController extends BaseController{
     
     self::redirect_to('/', array('message' => 'Hyvää päivän jatkoa!'));
   }
+  
+  public static function register() {
+        $params = $_POST;
+
+        $attributes = array(
+            'nimimerkki' => $params['nimimerkki'],
+            'salasana' => $params['salasana'],
+            'email' => $params['email']
+        );
+
+        $raakaaine = new Kayttaja($attributes);
+        $errors = $raakaaine->errors();
+
+        if (count($errors) == 0) {
+            $nimi = Kayttaja::registertosql($attributes);
+
+            self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
+        } else {
+            self::render_view('/login', array('errors' => $errors));
+        }
+    }
+    
 }
