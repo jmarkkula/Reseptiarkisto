@@ -37,8 +37,9 @@ class ReseptiController extends BaseController {
 
         if (count($errors) == 0) {
             $tunnus = Resepti::create($attributes);
+            $resepti = Resepti::find($tunnus);
 
-            self::redirect_to('/resepti/' . $tunnus . '/muokkaa', array('message' => 'Resepti lisätty.', 'resepti' => $attributes));
+            self::redirect_to('/resepti/' . $tunnus . '/muokkaa', array('message' => 'Resepti lisätty.', 'resepti' => $resepti));
         } else {
             self::render_view('/resepti/uusi.html', array('errors' => $errors, 'resepti' => $attributes));
         }

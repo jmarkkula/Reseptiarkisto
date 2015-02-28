@@ -23,18 +23,17 @@ class Resepti extends BaseModel {
     }
 
     public static function create($attributes) {
-        $rows = DB::query('INSERT INTO Resepti (nimi) VALUES :nimi RETURNING tunnus', array('nimi' => $attributes['nimi']));
-
-        $tunnus = null;
+        $rows = DB::query("INSERT INTO Resepti (nimi, valmistusohje, lisaaja) VALUES (:nimi, '', '') RETURNING tunnus", $attributes);
+        
+        return count($rows);
         
         if (count($rows) > 0) {
             $row = $rows[0];
 
-            $tunnus = $row['tunnus'];
+            return $row['tunnus'];
         }
-        
-        
-        return $tunnus;
+
+        return null;
     }
 
     public static function all() {
