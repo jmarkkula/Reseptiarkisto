@@ -34,16 +34,16 @@ class KayttajaController extends BaseController{
             'email' => $params['email']
         );
 
-        $raakaaine = new Kayttaja($attributes);
-        $errors = $raakaaine->errors();
+        //$user = new Kayttaja($attributes);
+        //$errors = $user->errors();
 
-        if (count($errors) == 0) {
+        //if (count($errors) == 0) {
             $nimi = Kayttaja::registertosql($attributes);
 
             self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
-        } else {
-            self::render_view('/login', array('errors' => $errors));
-        }
+        //} else {
+        //    self::render_view('/login', array('errors' => $errors));
+        //}
     }
     
     public static function register_form() {
