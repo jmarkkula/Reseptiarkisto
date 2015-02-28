@@ -63,7 +63,7 @@ $app->post('/login', function() {
 
 $app->get('/rekisteroidy', function() {
     KayttajaController::register();
-}
+});
 
 //Reseptin luominen
 $app->post('/resepti', function() {
