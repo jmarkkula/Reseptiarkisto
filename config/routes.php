@@ -65,6 +65,10 @@ $app->get('/rekisteroidy', function() {
     KayttajaController::register_form();
 });
 
+$app->post('/rekisteroidy', function() {
+    KayttajaController::register();
+});
+
 //Reseptin luominen
 $app->post('/resepti', function() {
     ReseptiController::store();
