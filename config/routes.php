@@ -62,7 +62,7 @@ $app->post('/login', function() {
 });
 
 $app->get('/rekisteroidy', function() {
-    KayttajaController::register();
+    KayttajaController::register_form();
 });
 
 //Reseptin luominen

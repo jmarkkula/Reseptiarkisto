@@ -46,4 +46,7 @@ class KayttajaController extends BaseController{
         }
     }
     
+    public static function register_form() {
+        self::render_view('/rekisteroidy');
+    }
 }
