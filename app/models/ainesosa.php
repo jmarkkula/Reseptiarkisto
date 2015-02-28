@@ -27,7 +27,7 @@ class Ainesosa extends BaseModel {
     }
 
     public static function destroy($attributes) {
-        DB::query('DELETE FROM Ainesosa WWHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus LIMIT 1', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
+        DB::query('DELETE FROM Ainesosa WHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus LIMIT 1', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
     }
 
     public static function create($attributes) {

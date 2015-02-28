@@ -67,6 +67,8 @@ $app->get('/resepti/:tunnus', function($tunnus) {
     ReseptiController::show($tunnus);
 });
 
+//Reseptin luominen
+
 //Reseptin muokkaus
 $app->get('/resepti/:tunnus/muokkaa', function($tunnus) {
     ReseptiController::edit($tunnus);
@@ -79,7 +81,7 @@ $app->post('/resepti/:tunnus', function($tunnus) {
 });
 
 //Ainesosien poisto
-$app->post('/resepti/:reseptitunnus/poistaaines', function($ainesosa) {
+$app->post('/resepti/:reseptitunnus/:ainesosa.raakaaine/poista', function($ainesosa) {
     AinesosaController::poista($ainesosa);
 });
 

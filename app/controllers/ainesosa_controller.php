@@ -9,6 +9,6 @@ class AinesosaController extends BaseController {
         
         $reseptitunnus = $ainesosa['reseptitunnus'];
         
-//        self::redirect_to('/resepti/' . $reseptitunnus . '/muokkaa');
+        self::redirect_to('/resepti/' . $reseptitunnus . '/muokkaa');
     }
 }
