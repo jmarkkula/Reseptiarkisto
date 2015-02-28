@@ -50,11 +50,11 @@ $app->post('/raakaaine/:nimi/poista', function($nimi) {
 
 //Kirjautuminen (todo)
 $app->get('/login', function() {
-    UserController::login();
+    KayttajaController::login();
 });
 
 $app->post('/login', function() {
-    UserController::handle_login();
+    KayttajaController::handle_login();
 });
 
 //Reseptien listaus
