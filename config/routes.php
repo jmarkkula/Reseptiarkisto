@@ -57,6 +57,14 @@ $app->post('/login', function() {
     KayttajaController::handle_login();
 });
 
+//Reseptin luominen
+$app->post('/resepti', function() {
+    ReseptiController::store();
+});
+
+$app->get('/resepti/uusi', function() {
+    ReseptiController::create();
+});
 //Reseptien listaus
 $app->get('/resepti', function() {
     ReseptiController::index();
@@ -67,14 +75,10 @@ $app->get('/resepti/:tunnus', function($tunnus) {
     ReseptiController::show($tunnus);
 });
 
-//Reseptin luominen
-
 //Reseptin muokkaus
 $app->get('/resepti/:tunnus/muokkaa', function($tunnus) {
     ReseptiController::edit($tunnus);
 });
-
-
 
 $app->post('/resepti/:tunnus', function($tunnus) {
     ReseptiController::update($tunnus);

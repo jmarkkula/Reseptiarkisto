@@ -7,7 +7,7 @@ salasana varchar(20)
 CREATE TABLE Resepti(
 tunnus SERIAL PRIMARY KEY,
 nimi varchar(50) NOT NULL,
-valmistusohje varchar NOT NULL,
+valmistusohje varchar,
 lisaaja varchar(20) REFERENCES Kayttaja(nimimerkki)
 );
 

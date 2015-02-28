@@ -16,16 +16,20 @@
         </thead>
 
         <tbody>
+            {% if not resepti.ainesosat %}
+            <tr><td>Ei ole lisätty ainesosia.</td></tr>
+            {% endif %}
+
             {% for ainesosa in resepti.ainesosat %}
             <tr>
                 <td><a href="{{base_path}}/raakaaine/{{ainesosa.raakaaine}}">{{ainesosa.raakaaine}}</a></td>
                 <td>{{ainesosa.maara}}</td>
                 <th>
-        <form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/{{ainesosa.raakaaine}}/poista">
-            <button type="submit" class="btn btn-danger">Poista</button>
-        </form>
-        </th>
-        </tr>
+                    <form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/{{ainesosa.raakaaine}}/poista">
+                           <button type="submit" class="btn btn-danger">Poista</button>
+                    </form>
+                </th>
+            </tr>
         {% endfor %}
         </tbody>
     </table>

@@ -19,31 +19,30 @@ class ReseptiController extends BaseController {
         self::render_view('resepti/esittely.html', array('resepti' => $resepti));
     }
 
-//    //Lisäys TODO
-//    
-//    public static function create() {
-//        self::render_view('raakaaine/new.html');
-//    }
-//
-//    public static function store() {
-//        $params = $_POST;
-//
-//        $attributes = array(
-//                    'nimi' => $params['nimi'],
-//                    'kuvaus' => $params['kuvaus']
-//        );
-//
-//        $raakaaine = new Raakaaine($attributes);
-//        $errors = $raakaaine->errors();
-//
-//        if (count($errors) == 0) {
-//            $nimi = Raakaaine::create($attributes);
-//
-//            self::redirect_to('/raakaaine/' . $nimi, array('message' => 'Raaka-aine lisätty.', 'raakaaine' => $attributes));
-//        } else {
-//            self::render_view('/raakaaine/new.html', array('errors' => $errors, 'raakaaine' => $attributes));
-//        }
-//    }
+    //Lisäys TODO
+    
+    public static function create() {
+        self::render_view('resepti/uusi.html');
+    }
+
+    public static function store() {
+        $params = $_POST;
+
+        $attributes = array(
+                    'nimi' => $params['nimi']
+        );
+
+        $resepti = new Resepti($attributes);
+        $errors = $resepti->errors();
+
+        if (count($errors) == 0) {
+            $tunnus = Resepti::create($attributes);
+
+            self::redirect_to('/resepti/' . $tunnus . '/muokkaa', array('message' => 'Resepti lisätty.', 'resepti' => $attributes));
+        } else {
+            self::render_view('/resepti/uusi.html', array('errors' => $errors, 'resepti' => $attributes));
+        }
+    }
     
     //Muokkaaminen TODO
     

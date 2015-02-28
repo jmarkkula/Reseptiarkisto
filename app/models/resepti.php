@@ -6,6 +6,35 @@ class Resepti extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+
+        $this->validators = array('validate_nimi');
+    }
+
+    public function validate_nimi() {
+        $errors = array();
+
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Nimi ei saa olla tyhjä.';
+        } else if (strlen($this->nimi) < 2) {
+            $errors[] = 'Nimen pituuden tulee olla vähintään kaksi merkkiä.';
+        }
+
+        return $errors;
+    }
+
+    public static function create($attributes) {
+        $rows = DB::query('INSERT INTO Resepti (nimi) VALUES :nimi RETURNING tunnus', array('nimi' => $attributes['nimi']));
+
+        $tunnus = null;
+        
+        if (count($rows) > 0) {
+            $row = $rows[0];
+
+            $tunnus = $row['tunnus'];
+        }
+        
+        
+        return $tunnus;
     }
 
     public static function all() {
@@ -44,7 +73,5 @@ class Resepti extends BaseModel {
 
         return null;
     }
-
-
 
 }
