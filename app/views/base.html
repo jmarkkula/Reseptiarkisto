@@ -42,9 +42,14 @@
             <li><a href="{{base_path}}/resepti">Reseptit</a></li>
             <li><a href="{{base_path}}/raakaaine">Raaka-aineet</a></li>
           </ul>
+            
+          {% if user_logged_in %}
+          <h1>SISÄÄNKIRJAUTUNUT: {{user_logged_in.username}}</h1>
+          {% else %}
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{{base_path}}/login">Kirjaudu sisään</a></li>
           </ul>
+          {% endif %}
         </div>
       </div>
     </nav>
