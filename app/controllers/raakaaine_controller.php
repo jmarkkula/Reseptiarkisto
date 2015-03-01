@@ -15,8 +15,10 @@ class RaakaaineController extends BaseController {
 
     public static function show($nimi) {
         $raakaaine = Raakaaine::find($nimi);
+        
+        $reseptit = Ainesosa::reseptit_joissa_raakaainetta($nimi);
 
-        self::render_view('raakaaine/esittely.html', array('raakaaine' => $raakaaine));
+        self::render_view('raakaaine/esittely.html', array('raakaaine' => $raakaaine, 'reseptit' => $reseptit));
     }
 
     //Lisäys

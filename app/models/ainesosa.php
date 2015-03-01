@@ -106,5 +106,21 @@ class Ainesosa extends BaseModel {
         
         return false;
     }
+    
+    public static function reseptit_joissa_raakaainetta($raakaaine) {
+        $rows = DB::query('SELECT * FROM Ainesosa WHERE raakaaine = :raakaaine', array('raakaaine' => $raakaaine));
+        
+        $reseptit = array();
+        
+        if(count($rows)>0) {
+            foreach($rows as $row) {
+                $reseptit[]=Resepti::find($row['reseptitunnus']);
+            }
+            
+            return $reseptit;
+        }
+        
+        return null;
+    }
 
 }
