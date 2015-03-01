@@ -6,6 +6,8 @@ class Kayttaja extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        
+        $this->validators = array('validate_nimimerkki');
     }
 
     public static function authenticate($nimimerkki, $salasana) {
@@ -54,5 +56,22 @@ class Kayttaja extends BaseModel {
             return $row['nimimerkki'];
         }
         return null;
+    }
+    
+    public static function validate_nimimerkki() {
+        $errors = array();
+
+        if ($this->nimimerkki == '' || $this->nimimerkki == null) {
+            $errors[] = 'Nimimerkki ei saa olla tyhjä.';
+        } else if (strlen($this->nimimerkki) < 2) {
+            $errors[] = 'Nimimerkin pituuden tulee olla vähintään kaksi merkkiä.';
+        }
+
+        if (strlen($this->nimimerkki) > 20) {
+            $errors[] = 'Nimimerkin pituus saa olla korkeintaan 20 merkkiä';
+        }
+
+
+        return $errors;
     }
 }
