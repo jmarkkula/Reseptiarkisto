@@ -3,7 +3,6 @@
 class ReseptiController extends BaseController {
 
     //Listaus
-
     public static function index() {
 
         $reseptit = Resepti::all();
@@ -12,15 +11,13 @@ class ReseptiController extends BaseController {
     }
 
     //Esittely
-
     public static function show($tunnus) {
         $resepti = Resepti::find($tunnus);
 
         self::render_view('resepti/esittely.html', array('resepti' => $resepti));
     }
 
-    //Lisäys TODO
-
+    //Lisäys
     public static function create() {
         self::render_view('resepti/uusi.html');
     }
@@ -78,16 +75,15 @@ class ReseptiController extends BaseController {
         self::render_view('/resepti/muokkaus.html', array('resepti' => $resepti));
     }
 
-//    //Poistaminen TODO
-//    
-//    public static function destroy($nimi) {
-//        Raakaaine::destroy($nimi);
-//        
-//        self::redirect_to('/raakaaine', array('message' => 'Raaka-aine poistettu onnistuneesti!'));
-//    }
-//
-//    public static function redirect_to($location, $message) {
-//        parent::redirect_to($location, $message);
-//    }
-//
+    //Poistaminen
+    
+    public static function destroy($tunnus) {
+        $nimi = Resepti::find($tunnus)->nimi;
+        
+        Ainesosa::destroy_resepti($tunnus);
+        Resepti::destroy($tunnus);
+        
+        self::redirect_to('/resepti', array('message' => $nimi . ' poistettu resepteistä.'));
+    }
+
 }

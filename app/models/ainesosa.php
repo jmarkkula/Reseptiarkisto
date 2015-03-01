@@ -52,6 +52,10 @@ class Ainesosa extends BaseModel {
     public static function destroy($attributes) {
         DB::query('DELETE FROM Ainesosa WHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus', $attributes);
     }
+    
+    public static function destroy_resepti($reseptitunnus) {
+        DB::query('DELETE FROM Ainesosa WHERE reseptitunnus = :reseptitunnus', array('reseptitunnus' => $reseptitunnus));
+    }
 
     public static function create($attributes) {
         DB::query('INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES (:raakaaine, :maara, :reseptitunnus)', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));

@@ -71,7 +71,7 @@ class RaakaaineController extends BaseController {
 
         self::redirect_to('/raakaaine', array('message' => 'Raaka-aine poistettu onnistuneesti!'));
         } else {
-            self::redirect_to('/raakaaine/'. $nimi, array('message' => 'Raaka-ainetta käytetään resepteissä, et voi poistaa sitä.'));
+            self::redirect_to('/raakaaine/'. $nimi, array('message' => 'Raaka-ainetta käytetään reseptissä, et voi poistaa sitä.'));
         }
         
     }

@@ -10,16 +10,12 @@
 {% endif %}
 
 <!-- Painikkeet tähän -->
-
-<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/poista">
-    <button type="submit" style="float:left; margin-right: 1em" class="btn btn-danger">Poista</button>
-</form>
-
+{% if user_logged_in %}
 <a href="{{base_path}}/resepti/{{resepti.tunnus}}/muokkaa" class="btn btn-default">Muokkaa</a>
-
+<br>
+<br>
+{% endif %}
 <!-- Ainekset tulee listana tähän -->
-<br>
-<br>
 
 <ul>
     {% for ainesosa in resepti.ainesosat %}

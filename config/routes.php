@@ -10,6 +10,7 @@ $app->get('/etusivu', function() {
     HelloWorldController::etusivu();
 });
 
+
 //Kirjautuminen ulos
 $app->post('/logout', function() {
     KayttajaController::logout();
@@ -67,6 +68,11 @@ $app->get('/rekisteroidy', function() {
 
 $app->post('/rekisteroidy/luo', function() {
     KayttajaController::register();
+});
+
+//Reseptin poisto
+$app->post('/resepti/:reseptitunnus/poista', function($reseptitunnus) {
+    ReseptiController::destroy($reseptitunnus);
 });
 
 //Reseptin ainesosan lisäys

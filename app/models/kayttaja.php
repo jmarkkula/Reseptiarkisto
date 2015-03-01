@@ -12,10 +12,7 @@ class Kayttaja extends BaseModel {
 
     public static function authenticate($nimimerkki, $salasana) {
         $rows = DB::query('SELECT nimimerkki, email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
-        /* $row = array(
-          "salasana" => "rahkapulla",
-          "email" => "testi@hotmail.com"
-          ); */
+    
 
         if (count($rows) > 0) {
             $row = $rows[0];

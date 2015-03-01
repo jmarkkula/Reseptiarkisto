@@ -31,10 +31,16 @@
         <tr>
             <td><a href="{{base_path}}/raakaaine/{{raakaaine.nimi}}">{{raakaaine.nimi}}</a></td>
             {% if user_logged_in %}
-            <th><a class="btn btn-default btn-sm" href="{{base_path}}/raakaaine/{{raakaaine.nimi}}/muokkaa">Muokkaa</a></th>
-            {% endif %}
+            <th>    
+                <form method="post" action="{{base_path}}/raakaaine/{{raakaaine.nimi}}/poista">
+                <button type="submit" style="float:left; margin-right: 1em" class="btn btn-danger btn-sm">Poista</button>
+                <a class="btn btn-default btn-sm" href="{{base_path}}/raakaaine/{{raakaaine.nimi}}/muokkaa">Muokkaa</a>
+                </form>
+            </th>
+    
+    {% endif %}
         </tr>
-        {% endfor %}
+{% endfor %}
     </tbody>
 </table>
 {% endblock %}

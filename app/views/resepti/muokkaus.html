@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Muokkaa reseptiä</h1>
+<h1>{{resepti.nimi}}</h1>
+
+{% if user_logged_in %}
 
 {%if message %}
 <div class="alert alert-success">
@@ -88,4 +90,24 @@
         <button type="submit" class="btn btn-primary">Tallenna</button>
     </div>
 </form>
+
+<br>
+<br>
+
+<!--Reseptin poistaminen-->
+<h3>Poista resepti</h3>
+
+<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/poista">
+    <button type="submit" style="float:left; margin-right: 1em" class="btn btn-danger">Poista</button>
+</form>
+<br>
+<p>Paina nappulaa vain jos olet aivan varma, että haluat poistaa reseptin lopullisesti.</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% else %}
+Sinun on kirjauduttava sisään jos haluat muokata reseptejä!
+{% endif %}
 {% endblock %}

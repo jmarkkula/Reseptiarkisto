@@ -75,4 +75,7 @@ class Resepti extends BaseModel {
         DB::query('UPDATE Resepti SET nimi = :nimi, valmistusohje = :valmistusohje WHERE tunnus = :tunnus', $attributes);
     }
 
+    public static function destroy($tunnus) {
+        DB::query('DELETE FROM Resepti WHERE tunnus = :tunnus', array('tunnus'=>$tunnus));
+    }
 }

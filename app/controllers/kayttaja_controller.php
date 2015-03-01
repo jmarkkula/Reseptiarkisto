@@ -23,7 +23,7 @@ class KayttajaController extends BaseController {
     public static function logout() {
         $_SESSION['nimimerkki'] = null;
 
-        self::redirect_to('/', array('message' => 'Olet nyt kirjautunut ulos'));
+        self::redirect_to('/', array('message' => 'Olet nyt kirjautunut ulos.'));
     }
 
     public static function register() {
@@ -40,7 +40,10 @@ class KayttajaController extends BaseController {
         
         if (count($errors) == 0) {
             $nimi = Kayttaja::create($attributes);
-            self::redirect_to('/', array('message' => 'Rekisteröinti onnistui'));
+            
+            $_SESSION['nimimerkki'] = $attributes['nimimerkki'];
+            
+            self::redirect_to('/', array('message' => 'Rekisteröinti onnistui!'));
         } else {
             self::redirect_to('/rekisteroidy', array('errors' => $errors));
         }
