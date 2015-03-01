@@ -3,7 +3,7 @@
 class ReseptiController extends BaseController {
 
     //Listaus
-    
+
     public static function index() {
 
         $reseptit = Resepti::all();
@@ -12,7 +12,7 @@ class ReseptiController extends BaseController {
     }
 
     //Esittely
-    
+
     public static function show($tunnus) {
         $resepti = Resepti::find($tunnus);
 
@@ -20,7 +20,7 @@ class ReseptiController extends BaseController {
     }
 
     //Lisäys TODO
-    
+
     public static function create() {
         self::render_view('resepti/uusi.html');
     }
@@ -29,8 +29,8 @@ class ReseptiController extends BaseController {
         $params = $_POST;
 
         $attributes = array(
-                    'nimi' => $params['nimi'],
-                'lisaaja' => $params['kayttaja']
+            'nimi' => $params['nimi'],
+            'lisaaja' => $params['kayttaja']
         );
 
         $resepti = new Resepti($attributes);
@@ -45,48 +45,39 @@ class ReseptiController extends BaseController {
             self::render_view('/resepti/uusi.html', array('errors' => $errors, 'resepti' => $attributes));
         }
     }
-    
-    //Muokkaaminen TODO
-    
+
+    //Muokkaaminen
+
     public static function edit($tunnus) {
         $resepti = Resepti::find($tunnus);
-        
+
         self::render_view('/resepti/muokkaus.html', array('resepti' => $resepti));
     }
-    
-    //EI VALMIS
+
     public static function update($tunnus) {
         $params = $_POST;
-        
-        $resepti = array('nimi' => $nimi, 'valmistusohje'=>$params['valmistusohje']);
-        Raakaaine::update($resepti);
-        
-//       $alkup_ainesosat = Ainesosa::reseptin_ainesosat($tunnus);
-//       $uudet_ainesosat = $params['ainesosat'];
-//       
-//        foreach($alkup_ainesosat as $alkup_ainesosa) {
-//            if(!in_array($alkup_ainesosa, $uudet_ainesosat)) {
-//                Ainesosa::destroy($alkup_ainesosa);
-//                
-//            }
-//        }
-//        
-//        foreach($uudet_ainesosat as $uusi_ainesosa) {
-//            if(!in_array($uusi_ainesosa, $alkup_ainesosat)) {
-//                Ainesosa::create($uusi_ainesosa);
-//            }
-//        }
-        
-        self::redirect_to('/resepti/' . $tunnus, array('message' => 'Reseptiä muokattu.', 'resepti' => $resepti));
-        
+
+        $attributes = array('nimi' => $params['nimi'], 'valmistusohje' => $params['valmistusohje'], 'tunnus' => $tunnus);
+
+        $validointiresepti = new Resepti($attributes);
+        $errors = $validointiresepti->errors();
+
+        if (count($errors) == 0) {
+            Resepti::update($attributes);
+            $resepti = Resepti::find($tunnus);
+            
+            self::redirect_to('/resepti/' . $tunnus . '/muokkaa', array('message' => 'Tiedot tallennettu.', 'resepti' => $resepti));
+        } else {
+            self::render_view('/resepti/' . $tunnus . '/muokkaa', array('errors' => $errors, 'resepti' => $attributes));
+        }
     }
-    
-        public static function poista_ainesosa() {
+
+    public static function poista_ainesosa() {
         $params = $_POST;
-        
+
         self::render_view('/resepti/muokkaus.html', array('resepti' => $resepti));
     }
-    
+
 //    //Poistaminen TODO
 //    
 //    public static function destroy($nimi) {

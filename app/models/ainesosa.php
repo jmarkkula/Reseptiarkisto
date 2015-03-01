@@ -92,5 +92,15 @@ class Ainesosa extends BaseModel {
 
         return null;
     }
+    
+    public static function onko_kaytossa($raakaaine) {
+        $rows = DB::query('SELECT * FROM Ainesosa WHERE raakaaine = :raakaaine', array('raakaaine' => $raakaaine));
+        
+        if(count($rows)>0) {
+            return true;
+        }
+        
+        return false;
+    }
 
 }

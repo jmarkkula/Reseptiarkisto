@@ -79,6 +79,12 @@ $app->post('/resepti/:reseptitunnus/ainesosat/poista', function($reseptitunnus) 
     AinesosaController::destroy($reseptitunnus);
 });
 
+//Reseptin nimen ja ohjeen muokkaus
+$app->post('/resepti/:reseptitunnus/tiedot', function($reseptitunnus) {
+    ReseptiController::update($reseptitunnus);
+});
+
+
 //Reseptin luominen
 $app->post('/resepti', function() {
     ReseptiController::store();

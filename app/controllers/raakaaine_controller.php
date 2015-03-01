@@ -66,9 +66,14 @@ class RaakaaineController extends BaseController {
     //Poistaminen 
 
     public static function destroy($nimi) {
-        Raakaaine::destroy($nimi);
+        if(!Ainesosa::onko_kaytossa($nimi)) {
+            Raakaaine::destroy($nimi);
 
         self::redirect_to('/raakaaine', array('message' => 'Raaka-aine poistettu onnistuneesti!'));
+        } else {
+            self::redirect_to('/raakaaine/'. $nimi, array('message' => 'Raaka-ainetta käytetään resepteissä, et voi poistaa sitä.'));
+        }
+        
     }
 
     public static function redirect_to($location, $message) {

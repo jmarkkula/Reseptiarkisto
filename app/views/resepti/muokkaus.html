@@ -47,7 +47,7 @@
         <div class="form-group">
             <input name="maara" type="hidden" class="form-control" value="{{ainesosa.maara}}">
         </div>
-        <button type="submit" class="btn btn-danger">Poista</button>
+        <button type="submit" class="btn btn-danger btn-sm">Poista</button>
     </form>
 </th>
 </tr>
@@ -75,7 +75,7 @@
 <!--    Nimen ja ohjeen muokkaus-->
 <h3>Muokkaa muita tietoja</h3>
 
-<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/">
+<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/tiedot">
     <div class="form-group">
         <label>Nimi</label>
         <input name="nimi" class="form-control" value="{{resepti.nimi}}" type="text">

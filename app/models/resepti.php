@@ -70,5 +70,9 @@ class Resepti extends BaseModel {
 
         return null;
     }
+    
+    public static function update($attributes) {
+        DB::query('UPDATE Resepti SET nimi = :nimi, valmistusohje = :valmistusohje WHERE tunnus = :tunnus', $attributes);
+    }
 
 }
