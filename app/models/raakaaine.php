@@ -29,7 +29,6 @@ class Raakaaine extends BaseModel {
             $errors[] = 'Nimen pituus saa olla korkeintaan 20 merkkiä';
         }
 
-
         return $errors;
     }
 

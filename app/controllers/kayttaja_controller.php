@@ -1,31 +1,32 @@
 <?php
 
-class KayttajaController extends BaseController{
-  public static function login(){
-      self::render_view('kayttaja/login.html');
-  }
+class KayttajaController extends BaseController {
 
-  public static function handle_login(){
-    $params = $_POST;
-
-    $kayttaja = Kayttaja::authenticate($params['nimimerkki'], $params['salasana']);
-
-    if(!$kayttaja){
-      self::redirect_to('/login', array('error' => 'Väärä käyttäjätunnus tai salasana.'));
-    } else{
-      $_SESSION['nimimerkki'] = $kayttaja->nimimerkki;
-
-      self::redirect_to('/', array('message' => 'Tervetuloa takaisin ' . $kayttaja->nimimerkki . '.'));
+    public static function login() {
+        self::render_view('kayttaja/login.html');
     }
-  }
-  
-  public static function logout() {
-    $_SESSION['nimimerkki'] = null;
-    
-    self::redirect_to('/', array('message' => 'Hyvää päivän jatkoa!'));
-  }
-  
-  public static function register() {
+
+    public static function handle_login() {
+        $params = $_POST;
+
+        $kayttaja = Kayttaja::authenticate($params['nimimerkki'], $params['salasana']);
+
+        if (!$kayttaja) {
+            self::redirect_to('/login', array('error' => 'Väärä käyttäjätunnus tai salasana.'));
+        } else {
+            $_SESSION['nimimerkki'] = $kayttaja->nimimerkki;
+
+            self::redirect_to('/', array('message' => 'Tervetuloa takaisin ' . $kayttaja->nimimerkki . '.'));
+        }
+    }
+
+    public static function logout() {
+        $_SESSION['nimimerkki'] = null;
+
+        self::redirect_to('/', array('message' => 'Olet nyt kirjautunut ulos'));
+    }
+
+    public static function register() {
         $params = $_POST;
 
         $attributes = array(
@@ -36,16 +37,19 @@ class KayttajaController extends BaseController{
 
         $kayttaja = new Kayttaja($attributes);
         $errors = $kayttaja->errors();
-
+        
         if (count($errors) == 0) {
             $nimi = Kayttaja::create($attributes);
-            self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
+            self::redirect_to('/', array('message' => 'Rekisteröinti onnistui'));
         } else {
+            //$errors_oma = array();
+            //$errors_oma[] = 'Samalla nimellä on jo rekisteröity! Rekisteröidy eri nimimerkillä';
             self::redirect_to('/rekisteroidy', array('errors' => $errors));
         }
     }
-    
+
     public static function register_form() {
         self::render_view('/kayttaja/rekisteroidy.html');
     }
+
 }

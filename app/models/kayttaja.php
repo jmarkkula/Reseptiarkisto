@@ -58,8 +58,13 @@ class Kayttaja extends BaseModel {
         return null;
     }
     
-    public static function validate_nimimerkki() {
+    public function validate_nimimerkki() {
         $errors = array();
+
+        
+        if (Kayttaja::find($this->nimimerkki) != NULL) {
+            $errors[] = 'Käyttäjä samalla nimimerkillä on jo olemassa';
+        }
 
         if ($this->nimimerkki == '' || $this->nimimerkki == null) {
             $errors[] = 'Nimimerkki ei saa olla tyhjä.';
