@@ -6,8 +6,6 @@ class Kayttaja extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        
-        $this->validators = array('validate_nimimerkki');
     }
 
     public static function authenticate($nimimerkki, $salasana) {

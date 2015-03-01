@@ -65,7 +65,7 @@ $app->get('/rekisteroidy', function() {
     KayttajaController::register_form();
 });
 
-$app->post('/rekisteroidytoinen', function() {
+$app->post('/rekisteroidy', function() {
     KayttajaController::register();
 });
 
