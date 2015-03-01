@@ -41,7 +41,7 @@ class KayttajaController extends BaseController{
             $nimi = Kayttaja::create($attributes);
             self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
         } else {
-            self::redirect_to('/rekisteroidy', array('message' => 'errorr'));
+            self::redirect_to('/rekisteroidy', array('errors' => 'errors'));
         }
     }
     
