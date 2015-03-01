@@ -3,11 +3,11 @@
 //Etusivu
 
 $app->get('/', function() {
-    HelloWorldController::etusivu();
+    EtusivuController::etusivu();
 });
 
 $app->get('/etusivu', function() {
-    HelloWorldController::etusivu();
+    EtusivuController::etusivu();
 });
 
 
