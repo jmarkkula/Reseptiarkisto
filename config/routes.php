@@ -52,7 +52,7 @@ $app->post('/raakaaine/:nimi/poista', function($nimi) {
 });
 
 
-//Kirjautuminen (todo)
+//Kirjautuminen
 $app->get('/login', function() {
     KayttajaController::login();
 });
@@ -61,12 +61,12 @@ $app->post('/login', function() {
     KayttajaController::handle_login();
 });
 
-$app->post('/rekisteroidy/luo', function() {
-    KayttajaController::register();
-});
-
 $app->get('/rekisteroidy', function() {
     KayttajaController::register_form();
+});
+
+$app->post('/rekisteroidy/luo', function() {
+    KayttajaController::register();
 });
 
 
