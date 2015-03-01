@@ -41,7 +41,7 @@ class Resepti extends BaseModel {
     public static function all() {
         $reseptit = array();
 
-        $rows = DB::query('SELECT * FROM Resepti');
+        $rows = DB::query('SELECT * FROM Resepti ORDER BY nimi ASC');
 
         foreach ($rows as $row) {
             $reseptit[] = new Resepti(array(
