@@ -51,8 +51,4 @@ class KayttajaController extends BaseController{
     public static function register_form() {
         self::render_view('/kayttaja/rekisteroidy.html');
     }
-    
-    public static function redirect_to($location, $message) {
-        parent::redirect_to($location, $message);
-    }
 }
