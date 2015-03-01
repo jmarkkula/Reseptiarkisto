@@ -69,7 +69,15 @@ $app->post('/rekisteroidy/luo', function() {
     KayttajaController::register();
 });
 
+//Reseptin ainesosan lisäys
+$app->post('/resepti/:reseptitunnus/ainesosat/lisaa', function($reseptitunnus) {
+    AinesosaController::create($reseptitunnus);
+});
 
+//Reseptin ainesosien poisto
+$app->post('/resepti/:reseptitunnus/ainesosat/poista', function($reseptitunnus) {
+    AinesosaController::destroy($reseptitunnus);
+});
 
 //Reseptin luominen
 $app->post('/resepti', function() {
@@ -99,15 +107,7 @@ $app->post('/resepti/:tunnus', function($tunnus) {
     ReseptiController::update($tunnus);
 });
 
-//Reseptin ainesosan lisäys
-$app->post('/resepti/:reseptitunnus/ainesosat', function() {
-    AinesosaController::create($ainesosa);
-});
 
-//Reseptin ainesosien poisto
-$app->post('/resepti/:reseptitunnus/ainesosat/poista', function($ainesosa) {
-    AinesosaController::destroy($ainesosa);
-});
 
 
 

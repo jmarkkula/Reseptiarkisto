@@ -42,8 +42,6 @@ class KayttajaController extends BaseController {
             $nimi = Kayttaja::create($attributes);
             self::redirect_to('/', array('message' => 'Rekisteröinti onnistui'));
         } else {
-            //$errors_oma = array();
-            //$errors_oma[] = 'Samalla nimellä on jo rekisteröity! Rekisteröidy eri nimimerkillä';
             self::redirect_to('/rekisteroidy', array('errors' => $errors));
         }
     }

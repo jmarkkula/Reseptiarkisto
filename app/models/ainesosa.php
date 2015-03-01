@@ -6,6 +6,29 @@ class Ainesosa extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        
+        $this->validators = array('validate_maara', 'validate_raakaaine');
+    }
+    
+    public function validate_raakaaine() {
+        $errors = array();
+        
+        
+        if($this->raakaaine=='' || $this->raakaaine == null) {
+            $errors[]='Raaka-aine ei saa olla tyhjä.';
+        }
+        
+        return $errors;
+    }
+    
+    public function validate_maara() {
+        $errors = array();
+        
+        if($this->maara == '' || $this->maara == null) {
+            $errors[]='Määrä ei saa olla tyhjä.';
+        }
+        
+        return $errors;
     }
 
     public static function find($attributes) {
@@ -27,7 +50,7 @@ class Ainesosa extends BaseModel {
     }
 
     public static function destroy($attributes) {
-        DB::query('DELETE FROM Ainesosa WHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus LIMIT 1', array('raakaaine' => $attributes['raakaaine'], 'maara' => $attributes['maara'], 'reseptitunnus' => $attributes['reseptitunnus']));
+        DB::query('DELETE FROM Ainesosa WHERE raakaaine = :raakaaine AND maara = :maara AND reseptitunnus = :reseptitunnus', $attributes);
     }
 
     public static function create($attributes) {

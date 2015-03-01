@@ -3,63 +3,89 @@
 {% block content %}
 <h1>Muokkaa reseptiä</h1>
 
+{%if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+{% if errors %}
+<div class="alert alert-danger">
+    <ul>
+        {% for error in errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
 <h3>Muokkaa ainesosia</h3>
 
-<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/ainesosat">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Raaka-aine</th>
-                <th>Määrä</th>
-                <th></th>
-            </tr>
-        </thead>
+<!--Ainesosien listaus (ja poisto)-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Raaka-aine</th>
+            <th>Määrä</th>
+            <th></th>
+        </tr>
+    </thead>
 
-        <tbody>
-            {% if not resepti.ainesosat %}
-            <tr><td>Ei ole lisätty ainesosia.</td></tr>
-            {% endif %}
+    <tbody>
+        {% if not resepti.ainesosat %}
+        <tr><td>Ei ole lisätty ainesosia.</td></tr>
+        {% endif %}
 
-            {% for ainesosa in resepti.ainesosat %}
-            <tr>
-                <td><a href="{{base_path}}/raakaaine/{{ainesosa.raakaaine}}">{{ainesosa.raakaaine}}</a></td>
-                <td>{{ainesosa.maara}}</td>
-                <th>
-                    <form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/{{ainesosa.raakaaine}}/poista">
-                           <button type="submit" class="btn btn-danger">Poista</button>
-                    </form>
-                </th>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        {% for ainesosa in resepti.ainesosat %}
+        <tr><form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/ainesosat/poista">
+        <td><a href="{{base_path}}/raakaaine/{{ainesosa.raakaaine}}">{{ainesosa.raakaaine}}</a></td>
+        <td>{{ainesosa.maara}}</td>
+        <th>
+        <div class="form-group">
+            <input name="raakaaine" type="hidden" class="form-control" value="{{ainesosa.raakaaine}}">
+        </div>
+        <div class="form-group">
+            <input name="maara" type="hidden" class="form-control" value="{{ainesosa.maara}}">
+        </div>
+        <button type="submit" class="btn btn-danger">Poista</button>
+    </form>
+</th>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+<!--Ainesosien lisäys-->
+<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/ainesosat/lisaa">
     <div class="form-group">
-        <label class="sr-only" for="raakaaine2">Raaka-aine</label>
-        <input type="text" class="form-control" placeholder="Raaka-aine">
+        <label class="sr-only" for="raakaaine">Raaka-aine</label>
+        <input type="text" name='raakaaine' class="form-control" placeholder="Raaka-aine">
     </div>
     <div class="form-group">
-        <label class="sr-only" for="maara2">Määrä</label>
-        <input type="text" class="form-control"  placeholder="Määrä">
+        <label class="sr-only" for="maara">Määrä</label>
+        <input type="text" name='maara' class="form-control"  placeholder="Määrä">
     </div>
 
     <button type="submit" class="btn btn-success">Lisää</button>
+</form>
+<br>
+<br>
+<br>
 
-    <br>
-    <br>
-    <br>
-    <h3>Muokkaa muita tietoja</h3>
+<!--    Nimen ja ohjeen muokkaus-->
+<h3>Muokkaa muita tietoja</h3>
 
-    <form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/">
-        <div class="form-group">
-            <label>Nimi</label>
-            <input name="nimi" class="form-control" value="{{resepti.nimi}}" type="text">
-        </div>
-        <div class="form-group">
-            <label>Valmistus</label>
-            <textarea name='valmistusohje' class="form-control">{{resepti.valmistusohje}}</textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Tallenna</button>
-        </div>
-    </form>
-    {% endblock %}
+<form method="post" action="{{base_path}}/resepti/{{resepti.tunnus}}/">
+    <div class="form-group">
+        <label>Nimi</label>
+        <input name="nimi" class="form-control" value="{{resepti.nimi}}" type="text">
+    </div>
+    <div class="form-group">
+        <label>Valmistus</label>
+        <textarea name='valmistusohje' class="form-control">{{resepti.valmistusohje}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Tallenna</button>
+    </div>
+</form>
+{% endblock %}

@@ -11,7 +11,9 @@ class Raakaaine extends BaseModel {
     }
 
     public static function create($attributes) {
-        DB::query('INSERT INTO Raakaaine (nimi, kuvaus) VALUES (:nimi, :kuvaus) RETURNING nimi', $attributes);
+        $nimi = ucfirst(strtolower($attributes['nimi']));
+        
+        DB::query('INSERT INTO Raakaaine (nimi, kuvaus) VALUES (:nimi, :kuvaus) RETURNING nimi', array('nimi'=>$nimi, 'kuvaus'=>$attributes['kuvaus']));
 
         return $attributes['nimi'];
     }
