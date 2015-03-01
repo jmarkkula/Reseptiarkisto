@@ -5,7 +5,7 @@ class AinesosaController extends BaseController {
     public static function create($reseptitunnus) {
         $params = $_POST;
 
-        $raakaaineennimi = ucfirst(strtolower($params['raakaaine']));
+        $raakaaineennimi = ucfirst(strtolower(trim($params['raakaaine'])));
 
         $attributes = array(
             'raakaaine' => $raakaaineennimi,

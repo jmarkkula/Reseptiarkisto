@@ -31,7 +31,7 @@ class RaakaaineController extends BaseController {
         $params = $_POST;
 
         $attributes = array(
-            'nimi' => $params['nimi'],
+            'nimi' => ucfirst(strtolower(trim($params['nimi']))),
             'kuvaus' => $params['kuvaus']
         );
 
