@@ -21,6 +21,10 @@ class Raakaaine extends BaseModel {
     public function validate_nimi() {
         $errors = array();
 
+        if(Raakaaine::find($this->nimi)!=null) {
+            $errors[] = 'Raaka-aine löytyy jo arkistosta.';
+        }
+        
         if ($this->nimi == '' || $this->nimi == null) {
             $errors[] = 'Nimi ei saa olla tyhjä.';
         } else if (strlen($this->nimi) < 2) {

@@ -18,6 +18,10 @@ class Resepti extends BaseModel {
         } else if (strlen($this->nimi) < 2) {
             $errors[] = 'Nimen pituuden tulee olla vähintään kaksi merkkiä.';
         }
+        
+        if (strlen($this->nimi) > 50) {
+            $errors[] = 'Nimen pituus saa olla korkeintaan 50 merkkiä';
+        }
 
         return $errors;
     }
