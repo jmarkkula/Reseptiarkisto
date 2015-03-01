@@ -61,13 +61,15 @@ $app->post('/login', function() {
     KayttajaController::handle_login();
 });
 
+$app->post('/rekisteroidy/luo', function() {
+    KayttajaController::register();
+});
+
 $app->get('/rekisteroidy', function() {
     KayttajaController::register_form();
 });
 
-$app->post('/rekisteroidy/luo', function() {
-    KayttajaController::register();
-});
+
 
 //Reseptin luominen
 $app->post('/resepti', function() {
