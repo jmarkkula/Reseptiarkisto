@@ -49,7 +49,7 @@ class Kayttaja extends BaseModel {
         return null;
     }
 
-    public static function registersql($attributes) {
+    public static function create($attributes) {
         $rows = DB::query('INSERT INTO Kayttaja (nimimerkki, email, salasana) VALUES (:nimimerkki, :email, :salasana) RETURNING nimimerkki', $attributes);
         if (count($rows) > 0) {
             $row = $rows[0];

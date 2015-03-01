@@ -38,13 +38,10 @@ class KayttajaController extends BaseController{
         $errors = $user->errors();
 
         if (count($errors) == 0) {
-            $nimi = Kayttaja::registertosql($attributes);
-            self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään'));
-            //self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
-            //self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
+            $nimi = Kayttaja::create($attributes);
+            self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
         } else {
-            self::redirect_to('/resepti', array('message' => 'tietokantahulluus'));
-            //self::render_view('/login', array('errors' => $errors));
+            self::redirect_to('/rekisteroidy', array('errors' => $errors));
         }
     }
     
