@@ -6,8 +6,8 @@ class Kayttaja extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        
-        $this->validators = array('validate_nimimerkki');
+
+        $this->validators = array('validate_nimimerkki', 'validate_salasana', 'validate_email');
     }
 
     public static function authenticate($nimimerkki, $salasana) {
@@ -57,11 +57,11 @@ class Kayttaja extends BaseModel {
         }
         return null;
     }
-    
+
     public function validate_nimimerkki() {
         $errors = array();
 
-        
+
         if (Kayttaja::find($this->nimimerkki) != NULL) {
             $errors[] = 'Käyttäjä samalla nimimerkillä on jo olemassa';
         }
@@ -76,7 +76,34 @@ class Kayttaja extends BaseModel {
             $errors[] = 'Nimimerkin pituus saa olla korkeintaan 20 merkkiä';
         }
 
+        return $errors;
+    }
+    
+    public function validate_email() {
+        $errors = array();
+
+        if (strlen($this->email) > 320) {
+            $errors[] = 'Sähköpostiosoitteen pituus saa olla korkeintaan 320 merkkiä';
+        }
 
         return $errors;
     }
+      
+    public function validate_salasana() {
+        $errors = array();
+
+        if ($this->salasana == '' || $this->salasana == null) {
+            $errors[] = 'Salasana ei saa olla tyhjä.';
+        } else if (strlen($this->salasana) < 2) {
+            $errors[] = 'Salasanan pituuden tulee olla vähintään kaksi merkkiä.';
+        }
+
+        if (strlen($this->salasana) > 20) {
+            $errors[] = 'Salasanan pituus saa olla korkeintaan 20 merkkiä';
+        }
+
+        return $errors;
+    }
+
+
 }
