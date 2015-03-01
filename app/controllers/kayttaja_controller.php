@@ -39,9 +39,9 @@ class KayttajaController extends BaseController{
 
         if (count($errors) == 0) {
             $nimi = Kayttaja::registertosql($attributes);
-
-//            self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
-            self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
+            self::redirect_to('/raakaine');
+            //self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
+            //self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
         } else {
             self::render_view('/login', array('errors' => $errors));
         }
