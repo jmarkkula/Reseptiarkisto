@@ -11,21 +11,10 @@ class Kayttaja extends BaseModel {
     }
 
     public static function authenticate($nimimerkki, $salasana) {
-        $rows = DB::query('SELECT nimimerkki, email, salasana FROM Kayttaja WHERE nimimerkki = :nimimerkki LIMIT 1', array('nimimerkki' => $nimimerkki));
-    
-
-        if (count($rows) > 0) {
-            $row = $rows[0];
-
-            if ($salasana == $row['salasana']) {
-                $kayttaja = new Kayttaja(array(
-                    'nimimerkki' => $row['nimimerkki'],
-                    'email' => $row['email'],
-                    'salasana' => $row['salasana']
-                ));
-
-                return $kayttaja;
-            }
+        $kayttaja = Kayttaja::find($nimimerkki);
+        
+        if($salasana == $kayttaja->salasana) {
+            return $kayttaja;
         }
         return null;
     }
