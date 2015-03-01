@@ -41,7 +41,7 @@ class Raakaaine extends BaseModel {
     public static function all() {
         $raakaaineet = array();
 
-        $rows = DB::query('SELECT * FROM Raakaaine');
+        $rows = DB::query('SELECT * FROM Raakaaine ORDER BY nimi ASC');
 
         foreach ($rows as $row) {
             $raakaaineet[] = new Raakaaine(array(
