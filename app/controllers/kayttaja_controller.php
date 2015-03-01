@@ -43,7 +43,7 @@ class KayttajaController extends BaseController{
             //self::redirect_to('/' . $nimi, array('message' => 'Voit nyt kirjautua sisään!'));
             //self::redirect_to('/', array('message' => 'Voit nyt kirjautua sisään!'));
         } else {
-            self::redirect_to('/resepti');
+            self::redirect_to('/resepti', array('message' => 'tietokantahulluus'));
             //self::render_view('/login', array('errors' => $errors));
         }
     }
