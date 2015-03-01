@@ -43,13 +43,9 @@
         <td><a href="{{base_path}}/raakaaine/{{ainesosa.raakaaine}}">{{ainesosa.raakaaine}}</a></td>
         <td>{{ainesosa.maara}}</td>
         <th>
-        <div class="form-group">
-            <input name="raakaaine" type="hidden" class="form-control" value="{{ainesosa.raakaaine}}">
-        </div>
-        <div class="form-group">
-            <input name="maara" type="hidden" class="form-control" value="{{ainesosa.maara}}">
-        </div>
-        <button type="submit" class="btn btn-danger btn-sm">Poista</button>
+            <input name="raakaaine" type="hidden" value="{{ainesosa.raakaaine}}">
+            <input name="maara" type="hidden" value="{{ainesosa.maara}}">
+            <button type="submit" style="float:right;" class="btn btn-danger btn-sm">Poista</button>
     </form>
 </th>
 </tr>

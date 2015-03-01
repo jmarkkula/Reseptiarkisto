@@ -15,9 +15,3 @@ INSERT INTO Raakaaine (nimi) VALUES ('Valkosipuli');
 INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES ('Pekoni', '500g', 1);
 INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES ('Kerma', '2 dl', 1);
 INSERT INTO Ainesosa (raakaaine, maara, reseptitunnus) VALUES ('Valkosipuli', '4 kynttä', 1);
-
--- Kategoria-taulun testidata
-INSERT INTO Kategoria (nimi, reseptitunnus) VALUES ('herkut', 1);
-
--- Suosikkiresepti-taulun testidata
-INSERT INTO Suosikkiresepti (reseptitunnus, kayttaja) VALUES (1, 'juli');
